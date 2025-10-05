@@ -14,11 +14,11 @@ CORS(app)
 def load_model():
     """Load the trained model with proper error handling"""
     try:
-        model_path = "trained_model.pkl"
+        model_path = "trained_model1.pkl"
         
         if not os.path.exists(model_path):
             current_dir = os.path.dirname(os.path.abspath(__file__))
-            model_path = os.path.join(current_dir, "trained_model.pkl")
+            model_path = os.path.join(current_dir, "trained_model1.pkl")
         
         if not os.path.exists(model_path):
             raise FileNotFoundError(f"Model file not found at: {model_path}")
@@ -35,11 +35,11 @@ def load_model():
 def load_model_reg():
     """Load the logistic regression model with proper error handling"""
     try:
-        model_path = "trained_model_log.pkl"
+        model_path = "trained_model_log1.pkl"
         
         if not os.path.exists(model_path):
             current_dir = os.path.dirname(os.path.abspath(__file__))
-            model_path = os.path.join(current_dir, "trained_model_log.pkl")
+            model_path = os.path.join(current_dir, "trained_model_log1.pkl")
         
         if not os.path.exists(model_path):
             raise FileNotFoundError(f"Logistic regression model file not found at: {model_path}")
@@ -131,4 +131,5 @@ def serve_static(path):
 if __name__ == '__main__':
     print("🚀 Starting Student Performance Predictor Server...")
     print("🌐 Server running at: http://localhost:5000")
+
     app.run(debug=True, host='0.0.0.0', port=5000)
